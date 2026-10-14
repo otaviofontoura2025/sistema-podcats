@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Podcasts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <span class="tag">PAINEL ADMINISTRATIVO</span>
+            <h1>Sistema de Podcasts</h1>
+            <p>Gerencie seus podcasts em um só lugar.</p>
+        </header>
+
+        <section class="card">
+            <h2 id="tituloFormulario">Cadastrar podcast</h2>
+
+            <form id="formPodcast">
+                <input type="hidden" id="podcastId">
+
+                <label for="nome">Nome do podcast</label>
+                <input id="nome" required maxlength="100"
+                       placeholder="Ex.: Pod Pwo">
+
+                <label for="categoria">Categoria</label>
+                <input id="categoria" required maxlength="100"
+                       placeholder="Ex.: Entretenimento">
+
+                <label for="apresentador">Apresentador</label>
+                <input id="apresentador" required maxlength="100"
+                       placeholder="Ex.: Otávio">
+
+                <label for="episodios">Quantidade de episódios</label>
+                <input id="episodios" type="number" min="0"
+                       step="1" required placeholder="Ex.: 10">
+
+                <div class="acoes">
+                    <button type="submit" id="btnSalvar">Cadastrar podcast</button>
+                    <button type="button" id="btnCancelar"
+                            class="secundario" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <div class="cabecalho-lista">
+                <h2>Podcasts cadastrados</h2>
+                <span id="total">0 podcasts</span>
+            </div>
+
+            <div class="tabela-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Apresentador</th>
+                            <th>Episódios</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaPodcasts"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <p id="mensagem" role="status"></p>
+    </main>
+</body>
+</html>
